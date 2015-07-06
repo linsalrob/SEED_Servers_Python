@@ -10,6 +10,7 @@ testun = testun.strip()
 if (len(testun) > 0):
     username = testun
 
+
 password = getpass.getpass()
 
 rast = RASTserver(username, password)
