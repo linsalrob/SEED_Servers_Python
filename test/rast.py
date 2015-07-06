@@ -12,7 +12,6 @@ if (len(testun) > 0):
 
 password = getpass.getpass()
 
-
 rast = RASTserver(username, password)
 
 status = rast.status_of_RAST_job({'-job' : 246902})
