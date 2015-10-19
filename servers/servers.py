@@ -17,6 +17,7 @@ class server:
     def __init__(self):
         #self.urlbase = 'http://servers.nmpdr.org/'
         self.urlbase = 'http://pubseed.theseed.org/'
+        #self.urlbase = 'http://pseed.theseed.org/'
         self.urlservice = None
         self.urlcgi  = '/server.cgi'
         self.params(email = 'redwards@mcs.anl.gov', source = 'Robs python implementation', encoding='json')
