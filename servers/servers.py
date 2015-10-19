@@ -54,7 +54,8 @@ class server:
         return self.data
 
     def addData(self, data):
-        '''add more data to the call. Note that this does not delete the existing data (in case you define things separately'''
+        '''add more data to the call. Note that this does not delete the
+        existing data (in case you define things separately'''
         for x in data:
             self.data[x]=data[x] 
 
@@ -63,15 +64,17 @@ class server:
         self.data = {}
 
 
-    def retrieve(self, data):
-        '''make the call and get the response'''
+    def retrieve(self, data, verbose=False):
+        '''Make the call and get the response. Set verbose to be true
+        for more information'''
 
         if not self.urlservice:
             sys.stderr.write("You did not define a service to call. Please use one of the servers like SAPserver, ANNOserver, FBAMODELserver, etc\n")
             sys.exit(-1)
 
         url = self.urlbase + self.urlservice + self.urlcgi
-        sys.stderr.write("Connecting to " + url + " for function " + self.data['function'] + "\n")
+        if verbose:
+            sys.stderr.write("Connecting to " + url + " for function " + self.data['function'] + "\n")
 
         dataToProcess = self.data.copy()
         ## convert the data to unicode
