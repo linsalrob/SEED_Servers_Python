@@ -16,10 +16,11 @@ import json
 class server:
     def __init__(self):
         #self.urlbase = 'http://servers.nmpdr.org/'
-        self.urlbase = 'http://pubseed.theseed.org/'
-        #self.urlbase = 'http://pseed.theseed.org/'
+        #self.urlbase = 'http://pubseed.theseed.org/'
+        self.urlbase = 'http://pseed.theseed.org/'
         self.urlservice = None
-        self.urlcgi  = '/server.cgi'
+        #self.urlcgi  = '/server.cgi'
+        self.urlcgi = '/sap_server.cgi'
         self.params(email = 'redwards@mcs.anl.gov', source = 'Robs python implementation', encoding='json')
 
     def service(self, name):
@@ -72,7 +73,8 @@ class server:
             sys.stderr.write("You did not define a service to call. Please use one of the servers like SAPserver, ANNOserver, FBAMODELserver, etc\n")
             sys.exit(-1)
 
-        url = self.urlbase + self.urlservice + self.urlcgi
+        url = self.urlbase + self.urlcgi
+        #url = self.urlbase + self.urlservice + self.urlcgi
         if verbose:
             sys.stderr.write("Connecting to " + url + " for function " + self.data['function'] + "\n")
 
