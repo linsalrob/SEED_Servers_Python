@@ -16,8 +16,8 @@ import json
 class server:
     def __init__(self):
         #self.urlbase = 'http://servers.nmpdr.org/'
-        #self.urlbase = 'http://pubseed.theseed.org/'
-        self.urlbase = 'http://pseed.theseed.org/'
+        self.urlbase = 'http://pubseed.theseed.org/'
+        #self.urlbase = 'http://pseed.theseed.org/'
         self.urlservice = None
         #self.urlcgi  = '/server.cgi'
         self.urlcgi = '/sap_server.cgi'
